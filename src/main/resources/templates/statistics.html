@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Shorten Url Service</title>
+</head>
+<body>
+
+    <h1>Welcome to Shorten Url Service</h1>
+
+    <div>
+
+        <p>All Links created and there statistics:</p>
+
+        <table>
+            <tr>
+                <td>long</td>
+                <td>short</td>
+                <td>times shorted</td>
+                <td>accessed</td>
+            </tr>
+            <tr th:each="url: ${urls}">
+                <td th:text="${url.longUrl}" />
+                <td th:text="${url.shortUrl}" />
+                <td th:text="${url.shortened}" />
+                <td th:text="${url.clicks}" />
+            </tr>
+        </table>
+    </div>
+
+    </br>
+    <a th:href="@{/order}">Submit a shorten request</a>
+
+</body>
+
+</html>

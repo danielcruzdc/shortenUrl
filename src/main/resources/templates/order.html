@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shorten Url Service</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+    <h1>Welcome to Shorten Url Service</h1>
+
+    <form method="POST" th:action="@{/shorten}" th:object="${url}">
+
+        <div>
+            <label>Type your Url to request a short version</label>
+            <input name="longUrl" type="text" />
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('longUrl')}"
+                  th:errors="*{longUrl}">Invalid Url</span>
+            <input type="submit" value="Submit"/>
+        </div>
+
+
+    </form>
+
+    </br>
+
+    <a th:href="@{/statistics}">Show all statistics</a>
+
+</body>
+</html>
